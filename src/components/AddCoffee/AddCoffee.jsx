@@ -22,7 +22,7 @@ const AddCoffee = () => {
       details,
       photo_url,
     };
-    console.log(newCoffee);
+    // console.log(newCoffee);
 
     fetch("http://localhost:50001/add_coffee", {
       method: "POST",
@@ -47,7 +47,7 @@ const AddCoffee = () => {
   /* ***************  *************** */
 
   return (
-    <div className="max-w-[1200px] mx-auto py-12 text-black bg-gray-50 px-8">
+    <div className="max-w-[1200px] mx-auto py-12 text-black bg-gray-50 px-3 sm:px-8">
       <h1
         className="  [text-shadow:_-6px_5px_18px_rgba(131,131,131,0.94)]
  md:text-3xl text-2xl text-center font-bold italic"
@@ -55,18 +55,20 @@ const AddCoffee = () => {
         Add New Coffee
       </h1>
       <p className="py-5 md:px-20 text-gray-900 text-justify">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam,
-        doloremque, aliquam porro iure sint adipisci, corrupti blanditiis animi
-        esse ratione veritatis voluptatum. Perspiciatis dolores fuga provident
-        hic quos in nulla qui delectus porro dolor expedita nesciunt eveniet
-        enim veritatis dicta, voluptatem ex error modi placeat unde officia
-        dolorem nostrum accusamus? Expedita sint dolorem quia totam.
+        Welcome to{" "}
+        <span className="text-orange-600 font-semibold ">ASM Coffee Shop.</span>{" "}
+        We are passionate about serving high-quality, ethically sourced coffee
+        in a cozy, welcoming space. Every cup is crafted with care by our expert
+        baristas, ensuring a rich and flavorful experience. Whether you’re here
+        for a quick espresso, a relaxing latte, or a friendly chat, we’re
+        dedicated to making every visit special. Join us and enjoy great coffee,
+        warm vibes, and a community that feels like home! ☕✨
       </p>
-      <form onSubmit={handleFormSubmit} className="flex flex-col gap-y-6">
-        <div className="flex w-full gap-x-8">
+      <form onSubmit={handleFormSubmit} className="flex flex-col gap-y-6 ">
+        <div className="flex flex-col md:flex-row w-full gap-x-8 gap-y-4 md:gap-y-0 ">
           <div className="md:w-1/2">
             <label>
-              <span className="block mb-2">Coffee Name</span>
+              <span className="block mb-2 font-semibold">Coffee Name</span>
             </label>
             <input
               className="pl-4 py-2 border w-full"
@@ -78,7 +80,9 @@ const AddCoffee = () => {
           </div>
           <div className="md:w-1/2">
             <label>
-              <span className="block mb-2">Available Quantity</span>
+              <span className="block mb-2 font-semibold">
+                Available Quantity
+              </span>
             </label>
             <input
               className="pl-4 py-2 border w-full"
@@ -89,10 +93,10 @@ const AddCoffee = () => {
             />
           </div>
         </div>
-        <div className="flex w-full gap-x-8">
+        <div className="flex flex-col md:flex-row w-full gap-x-8 gap-y-4 md:gap-y-0">
           <div className="md:w-1/2">
             <label>
-              <span className="block mb-2">Supplier Name</span>
+              <span className="block mb-2 font-semibold">Supplier Name</span>
             </label>
             <input
               className="pl-4 py-2 border w-full"
@@ -104,10 +108,10 @@ const AddCoffee = () => {
           </div>
           <div className="md:w-1/2">
             <label>
-              <span className="block mb-2">Taste</span>
+              <span className="block mb-2 font-semibold">Taste</span>
             </label>
             <input
-              className="pl-4 py-2 border w-full"
+              className="pl-4 py-2 border w-full "
               type="text"
               name="taste"
               placeholder="Enter Coffee Taste"
@@ -115,10 +119,10 @@ const AddCoffee = () => {
             />
           </div>
         </div>
-        <div className="flex w-full gap-x-8">
+        <div className="flex flex-col md:flex-row w-full gap-x-8 gap-y-4 md:gap-y-0">
           <div className="md:w-1/2">
             <label>
-              <span className="block mb-2">Category</span>
+              <span className="block mb-2 font-semibold">Category</span>
             </label>
             <input
               className="pl-4 py-2 border w-full"
@@ -130,7 +134,7 @@ const AddCoffee = () => {
           </div>
           <div className="md:w-1/2">
             <label>
-              <span className="block mb-2">Details</span>
+              <span className="block mb-2 font-semibold">Details</span>
             </label>
             <input
               className="pl-4 py-2 border w-full"
@@ -141,10 +145,10 @@ const AddCoffee = () => {
             />
           </div>
         </div>
-        <div className="flex w-full gap-x-8">
+        <div className="flex flex-col md:flex-row w-full gap-x-8 gap-y-4 md:gap-y-0">
           <div className="md:w-full">
             <label>
-              <span className="block mb-2">Photo URL</span>
+              <span className="block mb-2 font-semibold">Photo URL</span>
             </label>
             <input
               className="pl-4 py-2 border w-full"
@@ -160,7 +164,7 @@ const AddCoffee = () => {
           <input
             type="submit"
             value="Add Coffee"
-            className="w-full  shadow p-2.5 hover:text-white font-semibold hover:bg-green-700 duration-300 text-gray-700 bg-white "
+            className="w-full  shadow p-2.5  hover:text-white font-semibold hover:bg-green-800 duration-300 sm:text-gray-700 bg-green-800  sm:bg-white text-white"
           />
         </div>
       </form>

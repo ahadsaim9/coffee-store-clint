@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar bg-gradient-to-r from-teal-400 to-yellow-200 shadow-sm text-blue-900 hover:bg-transparent">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -19,12 +19,12 @@ const Navbar = () => {
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
-                />{" "}
+                />
               </svg>
             </div>
             <ul
               tabIndex={0}
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              class="menu menu-sm dropdown-content bg-gradient-to-r from-teal-400 to-yellow-200 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
                 <a>Item 1</a>
@@ -45,7 +45,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl">Coffee Store</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -55,11 +55,11 @@ const Navbar = () => {
             <li>
               <details>
                 <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
+                <ul className="p-2  bg-gradient-to-r from-teal-400 to-yellow-200 ">
+                  <li className="hover:bg-gray-400 hover:text-white rounded">
                     <a>Submenu 1</a>
                   </li>
-                  <li>
+                  <li className="hover:bg-gray-400 hover:text-white rounded">
                     <a>Submenu 2</a>
                   </li>
                 </ul>
