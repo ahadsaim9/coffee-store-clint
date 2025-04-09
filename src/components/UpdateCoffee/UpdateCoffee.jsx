@@ -51,7 +51,7 @@ const UpdateCoffee = () => {
   };
 
   return (
-    <div className="max-w-[1200px] mx-auto py-8 rounded-2xl text-black bg-gray-50 px-3 sm:px-8 mt-10">
+    <div className="max-w-[1200px] mx-auto py-8 rounded-2xl text-black bg-gray-50 px-3 sm:px-8 ">
       <h1
         className=" mb-3 [text-shadow:_-6px_5px_18px_rgba(131,131,131,0.94)]
  md:text-3xl text-2xl text-center font-bold italic"
@@ -166,7 +166,7 @@ const UpdateCoffee = () => {
           <input
             type="submit"
             value="Update Coffee"
-            className="w-full  shadow p-2.5  hover:text-white font-semibold hover:bg-green-800 duration-300 sm:text-gray-700 bg-green-800  sm:bg-white text-white"
+            className="w-full  shadow p-2.5  hover:text-white font-semibold hover:bg-green-800 duration-300 lg:text-gray-700 bg-green-800  lg:bg-white text-white"
           />
         </div>
       </form>

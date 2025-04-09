@@ -59,15 +59,17 @@ const Coffee = ({ coffee, setCoffees, coffees }) => {
         </div>
         <div className=" justify-center gap-3 md:gap-8 items-center flex sm:flex-col py-5 pr-5 ">
           <Link>
-            <button className="btn btn-primary border-none">Watch</button>
+            <button className="btn btn-primary border-none w-22">view </button>
           </Link>
           <Link to={`updateCoffee/${_id}`}>
-            <button className="btn bg-green-700 border-none">Update</button>
+            <button className="btn bg-green-700 border-none w-22">
+              Update
+            </button>
           </Link>
           <Link>
             <button
               onClick={() => handleDelete(_id)}
-              className="btn bg-red-700 border-none"
+              className="btn bg-red-700 border-none w-22"
             >
               X
             </button>

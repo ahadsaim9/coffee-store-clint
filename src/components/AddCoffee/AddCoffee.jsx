@@ -47,7 +47,7 @@ const AddCoffee = () => {
   /* ***************  *************** */
 
   return (
-    <div className="max-w-[1200px] mx-auto py-12 text-black bg-gray-50 px-3 sm:px-8">
+    <div className="max-w-[1200px] mx-auto py-10 pt-12 text-black bg-gray-50 px-3 sm:px-8">
       <h1
         className="  [text-shadow:_-6px_5px_18px_rgba(131,131,131,0.94)]
  md:text-3xl text-2xl text-center font-bold italic"
@@ -71,7 +71,7 @@ const AddCoffee = () => {
               <span className="block mb-2 font-semibold">Coffee Name</span>
             </label>
             <input
-              className="pl-4 py-2 border w-full"
+              className="pl-4 py-2 border w-full "
               type="text"
               name="name"
               placeholder="Enter Coffee Name"
@@ -164,7 +164,7 @@ const AddCoffee = () => {
           <input
             type="submit"
             value="Add Coffee"
-            className="w-full  shadow p-2.5  hover:text-white font-semibold hover:bg-green-800 duration-300 sm:text-gray-700 bg-green-800  sm:bg-white text-white"
+            className="w-full  shadow p-2.5  hover:text-white font-semibold hover:bg-green-800 duration-300 lg:text-gray-700 bg-green-800  lg:bg-white text-white"
           />
         </div>
       </form>

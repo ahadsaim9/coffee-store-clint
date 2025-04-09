@@ -1,80 +1,109 @@
-import React from "react";
-
+import { NavLink } from "react-router";
+import { useState } from "react";
+import { MdClose, MdMenu } from "react-icons/md";
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div>
-      <div className="navbar bg-gradient-to-r from-teal-400 to-yellow-200 shadow-sm text-blue-900 hover:bg-transparent">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              class="menu menu-sm dropdown-content bg-gradient-to-r from-teal-400 to-yellow-200 rounded-box z-1 mt-3 w-52 p-2 shadow"
+    <section className="fixed top-0 right-0 w-full color-1 z-20 bg-gray-900">
+      <div className="flex relative justify-between h-16 px-5 items-center shadow-lg">
+        <NavLink to="/">
+          <h1 className="cursor-pointer text-white md:text-2xl font-bold italic uppercase [text-shadow:_-6px_5px_18px_rgba(231,231,231,0.90)] ">
+            Coffee shop
+          </h1>
+        </NavLink>
+        <ul
+          className={`absolute duration-500 ${
+            open ? "top-16 right-0" : "-right-[300px] top-16"
+          } p-5 lg:p-0 rounded-bl-md bg-gray-900 lg:static lg:flex flex flex-col lg:flex-row gap-y-2.5 lg:gap-6 text-[20px] text-white font-bold color-1 cursor-pointer `}
+        >
+          <li>
+            <NavLink
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? " border-b-orange-500 border-b-2"
+                  : ""
+              }
+              to="/"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
-            </ul>
-          </div>
-          <a className="btn btn-ghost text-xl">Coffee Store</a>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2  bg-gradient-to-r from-teal-400 to-yellow-200 ">
-                  <li className="hover:bg-gray-400 hover:text-white rounded">
-                    <a>Submenu 1</a>
-                  </li>
-                  <li className="hover:bg-gray-400 hover:text-white rounded">
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
-        </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
-        </div>
+              Home
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "border-b-orange-500 border-b-2"
+                  : ""
+              }
+              to="/add_coffee"
+            >
+              Add Coffee
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "border-b-orange-500 border-b-2"
+                  : ""
+              }
+              to="/users"
+            >
+              Users
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "border-b-orange-500 border-b-2"
+                  : ""
+              }
+              to="/signin"
+            >
+              sign-In
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "border-b-orange-500 border-b-2"
+                  : ""
+              }
+              to="/signup"
+            >
+              Sign-Up
+            </NavLink>
+          </li>
+        </ul>
+
+        <button
+          type="button"
+          onClick={() => setOpen((prev) => !prev)}
+          className="lg:hidden cursor-pointer z-10 "
+        >
+          {open ? (
+            <MdClose className="text-2xl z-20 lg:hidden hover:cursor-pointer text-white"></MdClose>
+          ) : (
+            <MdMenu className="text-2xl z-20 text-white hover:cursor-pointer lg:hidden "></MdMenu>
+          )}
+        </button>
       </div>
-    </div>
+    </section>
   );
 };
 
