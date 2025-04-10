@@ -25,7 +25,7 @@ const SignIn = () => {
         console.log("lastSignInTime: ", lastSignInTime);
         const loginInfo = { email, lastSignInTime };
 
-        fetch(`http://localhost:50001/users`, {
+        fetch(`https://coffee-store-server-nu-beryl.vercel.app/users`, {
           method: "PATCH",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(loginInfo),
