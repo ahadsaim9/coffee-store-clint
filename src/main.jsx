@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () =>
-          fetch("https://coffee-store-server-nu-beryl.vercel.app/coffee"),
+          fetch("https://coffee-store-server-nvkesla1g-ahad-ali.vercel.app"),
       },
       {
         path: "/",
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         path: "/coffees",
         element: <Coffees></Coffees>,
         loader: () =>
-          fetch("https://coffee-store-server-nu-beryl.vercel.app/coffee"),
+          fetch("https://coffee-store-server-nvkesla1g-ahad-ali.vercel.app"),
       },
       {
         path: "/add_coffee",
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         element: <UpdateCoffee></UpdateCoffee>,
         loader: ({ params }) =>
           fetch(
-            `https://coffee-store-server-nu-beryl.vercel.app/coffee/${params.id}`
+            `https://coffee-store-server-nvkesla1g-ahad-ali.vercel.app/${params.id}`
           ),
       },
 
@@ -65,7 +65,9 @@ const router = createBrowserRouter([
         path: "/users",
         element: <Users></Users>,
         loader: () =>
-          fetch("https://coffee-store-server-nu-beryl.vercel.app/users"),
+          fetch(
+            "https://coffee-store-server-nvkesla1g-ahad-ali.vercel.app/users"
+          ),
       },
     ],
   },

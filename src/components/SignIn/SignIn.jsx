@@ -25,11 +25,14 @@ const SignIn = () => {
         console.log("lastSignInTime: ", lastSignInTime);
         const loginInfo = { email, lastSignInTime };
 
-        fetch(`https://coffee-store-server-nu-beryl.vercel.app/users`, {
-          method: "PATCH",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(loginInfo),
-        })
+        fetch(
+          `https://coffee-store-server-nvkesla1g-ahad-ali.vercel.app/users`,
+          {
+            method: "PATCH",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(loginInfo),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.matchedCount > 0) {
