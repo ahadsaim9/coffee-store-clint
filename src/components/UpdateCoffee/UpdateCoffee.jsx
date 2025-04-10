@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 
 const UpdateCoffee = () => {
-  const coffee = useLoaderData();
+  const coffee = useLoaderData() || [];
   const { _id, name, quantity, supplier, taste, category, details, photo_url } =
     coffee;
   /* *************** Update Coffee *************** */

@@ -4,7 +4,7 @@ import Coffee from "../Coffee/Coffee";
 import AddCoffee from "../AddCoffee/AddCoffee";
 
 const Coffees = () => {
-  const loadedCoffees = useLoaderData();
+  const loadedCoffees = useLoaderData() || [];
   const [coffees, setCoffees] = useState(loadedCoffees);
   // console.log(coffees);
 

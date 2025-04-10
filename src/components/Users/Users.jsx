@@ -3,8 +3,8 @@ import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 
 const Users = () => {
-  const loadedUsers = useLoaderData();
-  const [users, setUsers] = useState(loadedUsers);
+  const loadedUsers = useLoaderData() || [];
+  const [users, setUsers] = useState(loadedUsers || []);
 
   /* *************** HandleUsers *************** */
   const handleUserDeleted = (id) => {
