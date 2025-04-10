@@ -29,7 +29,7 @@ const UpdateCoffee = () => {
     };
     // console.log(UpdatedCoffee);
 
-    fetch(`https://coffee-store-server-nvkesla1g-ahad-ali.vercel.app/${_id}`, {
+    fetch(`https://coffee-store-server-ahad-ali.vercel.app/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -28,14 +28,11 @@ const SignUp = () => {
         const createdAt = result?.user?.metadata?.creationTime;
         const newUser = { name, email, createdAt };
         /* *************** save new user info to the Database.  *************** */
-        fetch(
-          "https://coffee-store-server-nvkesla1g-ahad-ali.vercel.app/users",
-          {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(newUser),
-          }
-        )
+        fetch("https://coffee-store-server-ahad-ali.vercel.app/users", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(newUser),
+        })
           .then((res) => res.json())
           .then((data) => {
             console.log("user created to DataBase", data);
