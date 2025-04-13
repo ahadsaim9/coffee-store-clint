@@ -1,12 +1,11 @@
+import React from "react";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
 
-const Coffee = ({ coffee, setCoffees, coffees }) => {
-  // console.log(coffee);
-
+const Coffee = ({ coffee, coffees, setCoffees }) => {
   const { _id, name, quantity, supplier, taste, category, details, photo_url } =
     coffee;
-
+  /* *************** handleUsers *************** */
   const handleDelete = (_id) => {
     console.log(_id);
 

@@ -20,9 +20,8 @@ const SignIn = () => {
     signInUser(email, password)
       .then((result) => {
         // console.log(result.user);
-        const lastSignInTime =
-          result?.user?.metadata?.lastSignInTime || new Date().toISOString();
-        console.log("lastSignInTime: ", lastSignInTime);
+        const lastSignInTime = result?.user?.metadata?.lastSignInTime;
+        // console.log("lastSignInTime: ", lastSignInTime);
         const loginInfo = { email, lastSignInTime };
 
         fetch(`https://coffee-store-server-ahad-ali.vercel.app/users`, {
@@ -32,7 +31,7 @@ const SignIn = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            if (data.matchedCount > 0) {
+            if (data.matchedCount) {
               form.reset();
               console.log("User found and updated:", data);
             } else {
