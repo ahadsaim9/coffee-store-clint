@@ -42,21 +42,23 @@ const Users = () => {
         Total Users:
         <span className="text-orange-600 font-semibold">{users.length}</span>
       </h1>
-      <div className="grid md:grid-cols-2 px-10 gap-x-4 gap-y-5 mx-auto w-full ">
+      <div className=" grid  md:grid-cols-2 px-10 gap-x-4 gap-y-5 mx-auto  max-w-[980px] ">
         {users.map((user) => (
-          <div key={user._id} className="">
+          <div
+            key={user._id}
+            className="bg-blue-50 p-5 rounded [box-shadow:_-6px_5px_18px_rgba(131,131,131,0.94)]"
+          >
             <h1>User Name: {user.name}</h1>
             <p>User Email: {user.email}</p>
             <p>User CreatedAt: {user.createdAt}</p>
+
             <p>
-              {user?.metadata?.lastSignInTime
-                ? `Last login: ${lastSignInTime}`
-                : ""}
+              Last login:
+              {user.lastSignInTime
+                ? new Date(user.lastSignInTime).toLocaleString()
+                : " Not logged in yet"}
             </p>
             <div className="flex gap-10 mt-3">
-              <button className="px-4 py-1.5 text-white bg-blue-950 rounded">
-                Edit
-              </button>
               <button
                 onClick={() => handleUserDeleted(user._id)}
                 className="px-4 py-1.5 bg-red-700 text-white rounded"

@@ -1,6 +1,6 @@
 import { GoEye, GoEyeClosed } from "react-icons/go";
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -20,8 +20,7 @@ const SignIn = () => {
     signInUser(email, password)
       .then((result) => {
         // console.log(result.user);
-        const lastSignInTime =
-          result?.user?.metadata?.lastSignInTime || new Date().toISOString();
+        const lastSignInTime = result?.user?.metadata?.lastSignInTime;
         console.log("lastSignInTime: ", lastSignInTime);
         const loginInfo = { email, lastSignInTime };
 

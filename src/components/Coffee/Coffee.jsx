@@ -43,11 +43,10 @@ const Coffee = ({ coffee, setCoffees, coffees }) => {
     });
   };
   return (
-    <div className=" shadow-xl w-full  rounded flex flex-col md:flex-row bg-gradient-to-r from-teal-400 to-yellow-200 text-blue-950 [box-shadow:_-6px_5px_18px_rgba(131,131,131,0.94)]">
+    <div className=" shadow-xl w-full  rounded flex flex-col md:flex-row bg-blue-50 text-blue-950 [box-shadow:_-6px_5px_18px_rgba(131,131,131,0.94)]">
       <div className="min-h-24 md:h-auto p-4 min-w-20 max-w-60  mx-auto md:mx-0">
         <img className=" h-full w-full" src={photo_url} alt="" />
       </div>
-
       <section className="flex pl-5 flex-col sm:flex-row mx-auto ">
         <div className="flex flex-col justify-center pr-10">
           <h2 className=" xl:text-2xl font-semibold ">Coffee Name: {name}</h2>

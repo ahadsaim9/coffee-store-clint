@@ -9,9 +9,9 @@ const Coffees = () => {
   // console.log(coffees);
 
   return (
-    <div className="">
+    <div className="bg-white">
       <div>
-        <h1 className="text-2xl mt-4 text-center pb-10 text-gray-400 font-bold  [text-shadow:_-6px_5px_18px_rgba(131,131,131,0.94)]">
+        <h1 className="text-2xl pt-4 text-center pb-10 text-gray-800 font-bold  [text-shadow:_-6px_5px_18px_rgba(131,131,131,0.94)]">
           Coffees: <span className="text-orange-600">{coffees.length}</span>
         </h1>
         <div>
