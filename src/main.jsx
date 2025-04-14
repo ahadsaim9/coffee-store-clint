@@ -13,6 +13,7 @@ import Coffees from "./components/Coffees/Coffees.jsx";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 import AuthProvider from "./Provider/AuthProvider.jsx";
 import Users from "./components/Users/Users.jsx";
+import CoffeeDetails from "./components/CoffeeDetails/CoffeeDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
         path: "/add_coffee",
         element: <AddCoffee></AddCoffee>,
       },
+      {
+        path: "/coffeeDetails/:id",
+        element: <CoffeeDetails></CoffeeDetails>,
+      },
+
       {
         path: "/updateCoffee/:id",
         element: <UpdateCoffee></UpdateCoffee>,

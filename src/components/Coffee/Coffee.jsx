@@ -57,7 +57,7 @@ const Coffee = ({ coffee, setCoffees, coffees }) => {
           <p> Details: {details}</p>
         </div>
         <div className=" justify-center gap-3 md:gap-8 items-center flex sm:flex-col py-5 pr-5 ">
-          <Link>
+          <Link to={`coffeeDetails/${_id}`}>
             <button className="btn btn-primary border-none w-22">view </button>
           </Link>
           <Link to={`updateCoffee/${_id}`}>
