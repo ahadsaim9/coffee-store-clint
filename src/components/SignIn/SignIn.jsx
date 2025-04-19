@@ -24,7 +24,7 @@ const SignIn = () => {
         console.log("lastSignInTime: ", lastSignInTime);
         const loginInfo = { email, lastSignInTime };
 
-        fetch(`http://localhost:3000/users`, {
+        fetch(`https://coffee-store-server-5f2v.onrender.com/users`, {
           method: "PATCH",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(loginInfo),

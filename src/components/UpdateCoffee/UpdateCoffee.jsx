@@ -29,7 +29,7 @@ const UpdateCoffee = () => {
     };
     // console.log(UpdatedCoffee);
 
-    fetch(`http://localhost:3000/coffee/${_id}`, {
+    fetch(`https://coffee-store-server-5f2v.onrender.com/coffee/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

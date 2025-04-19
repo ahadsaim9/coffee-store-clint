@@ -7,7 +7,7 @@ const CoffeeDetails = () => {
   console.log(coffee);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/coffee/${id}`)
+    fetch(`https://coffee-store-server-5f2v.onrender.com/coffee/${id}`)
       .then((res) => res.json())
       .then((data) => setCoffee(data));
   }, [id]);
