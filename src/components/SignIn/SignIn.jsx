@@ -24,7 +24,7 @@ const SignIn = () => {
         console.log("lastSignInTime: ", lastSignInTime);
         const loginInfo = { email, lastSignInTime };
 
-        fetch(`http://localhost:50001/users`, {
+        fetch(`http://localhost:3000/users`, {
           method: "PATCH",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(loginInfo),

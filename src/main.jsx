@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:50001/coffee"),
+        loader: () => fetch("http://localhost:3000/coffee"),
       },
       {
         path: "/",
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: "/coffees",
         element: <Coffees></Coffees>,
-        loader: () => fetch("http://localhost:50001/coffee"),
+        loader: () => fetch("http://localhost:3000/coffee"),
       },
       {
         path: "/add_coffee",
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         path: "/updateCoffee/:id",
         element: <UpdateCoffee></UpdateCoffee>,
         loader: ({ params }) =>
-          fetch(`http://localhost:50001/coffee/${params.id}`),
+          fetch(`http://localhost:3000/coffee/${params.id}`),
       },
 
       {
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
       {
         path: "/users",
         element: <Users></Users>,
-        loader: () => fetch("http://localhost:50001/users"),
+        loader: () => fetch("http://localhost:3000/users"),
       },
     ],
   },

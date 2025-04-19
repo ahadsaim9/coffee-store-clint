@@ -24,7 +24,7 @@ const AddCoffee = () => {
     };
     // console.log(newCoffee);
 
-    fetch("http://localhost:50001/add_coffee", {
+    fetch("http://localhost:3000/add_coffee", {
       method: "POST",
       headers: {
         "content-type": "application/json",

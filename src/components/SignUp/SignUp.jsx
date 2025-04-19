@@ -28,7 +28,7 @@ const SignUp = () => {
         const createdAt = result?.user?.metadata?.creationTime;
         const newUser = { name, email, createdAt };
         /* *************** save new user info to the Database.  *************** */
-        fetch("http://localhost:50001/users", {
+        fetch("http://localhost:3000/users", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(newUser),
