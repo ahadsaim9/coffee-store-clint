@@ -18,7 +18,9 @@ const Users = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/users/${id}`, { method: "DELETE" })
+        fetch(`https://coffee-store-server-5f2v.onrender.com/users/${id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             console.log("delete is done", data);
