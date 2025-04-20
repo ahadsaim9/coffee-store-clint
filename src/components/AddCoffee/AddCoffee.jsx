@@ -156,7 +156,7 @@ const AddCoffee = () => {
               name="photo_url"
               placeholder="Enter Photo URL"
               required
-              defaultValue={""}
+              defaultValue={"https://i.ibb.co.com/BVBT5jZw/1.png"}
             />
           </div>
         </div>
