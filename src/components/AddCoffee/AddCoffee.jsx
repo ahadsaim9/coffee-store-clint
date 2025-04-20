@@ -156,6 +156,7 @@ const AddCoffee = () => {
               name="photo_url"
               placeholder="Enter Photo URL"
               required
+              defaultValue={""}
             />
           </div>
         </div>
