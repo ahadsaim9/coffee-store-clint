@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="flex relative justify-between min-h-17 px-5 items-center shadow-lg">
         <NavLink to="/">
           <h1 className="cursor-pointer text-blue-950 md:text-2xl font-bold italic uppercase [text-shadow:_-6px_5px_18px_rgba(231,231,231,0.90)] ">
-            Coffee shop
+            ASM Coffee shop
           </h1>
         </NavLink>
         <ul
