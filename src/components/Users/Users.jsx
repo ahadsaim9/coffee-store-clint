@@ -23,7 +23,7 @@ const Users = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log("delete is done", data);
+            // console.log("delete is done", data);
             if (data.deletedCount) {
               Swal.fire({
                 title: "Deleted!",
@@ -39,7 +39,7 @@ const Users = () => {
   };
 
   return (
-    <div className="min-h-svh w-full bg-white text-black">
+    <div className="min-h-svh w-full bg-blue-50 text-black pb-5">
       <h1 className="text-2xl text-center py-10">
         Total Users:
         <span className="text-orange-600 font-semibold">{users.length}</span>

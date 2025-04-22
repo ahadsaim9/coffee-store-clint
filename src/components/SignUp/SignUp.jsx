@@ -6,11 +6,13 @@ import Swal from "sweetalert2";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [registerError, setRegisterError] = useState("");
   /* ***************  *************** */
   const { createUser } = useContext(AuthContext);
   /* ***************  *************** */
 
   const handleSignUp = (event) => {
+    setRegisterError("");
     event.preventDefault();
     // console.log(event.currentTarget);
     const form = event.target;
@@ -21,12 +23,39 @@ const SignUp = () => {
 
     // console.log(form);
 
+    /* *************** password check *************** */
+    if (password.length < 6) {
+      setRegisterError(" password should be at least  6 characters or longer");
+      Swal(
+        "Oops!",
+        "password should be at least  6 characters or longer..!",
+        "error"
+      );
+    } else if (!/[A-Z]/.test(password)) {
+      setRegisterError(
+        "Your password should have at last one upper case letter."
+      );
+
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      setRegisterError(
+        "Your password should have at last one lower case letter."
+      );
+
+      return;
+    } else if (!/[0-9]/.test(password)) {
+      setRegisterError("Your password should have at last one number(0-9).!");
+      return;
+    }
+    /* *************** accepted terms and condition *************** */
+
     createUser(email, password)
       /* ***************  *************** */
       .then((result) => {
         // console.log("user created at fb", result.user);
         const createdAt = result?.user?.metadata?.creationTime;
         const newUser = { name, email, createdAt };
+
         /* *************** save new user info to the Database.  *************** */
         fetch("https://coffee-store-server-5f2v.onrender.com/users", {
           method: "POST",
@@ -114,6 +143,13 @@ const SignUp = () => {
               className="bg-blue-950  hover:bg-green-800 duration-500 hover:shadow-md  text-white w-full py-3 font-bold rounded-sm px-3"
             />
           </form>
+          {/* *********** error and success message ************ */}
+
+          {registerError && (
+            <p className="text-red-600 text-center mt-4"> {registerError} </p>
+          )}
+
+          {/* *********** Already have an account...! Go to signIn page ************ */}
           <p className="text-center text-[14px] text-blue-950 font-semibold my-8">
             Already Have An Account ?
             <span className="text-orange-600">

@@ -33,7 +33,7 @@ const AddCoffee = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
@@ -47,7 +47,7 @@ const AddCoffee = () => {
   /* ***************  *************** */
 
   return (
-    <div className="max-w-[1200px] mx-auto py-10 pt-12 text-black bg-gray-50 px-3 sm:px-8">
+    <div className="max-w-[1520px] mx-auto py-10 pt-12 text-black bg-white px-3 sm:px-8">
       <h1
         className="  [text-shadow:_-6px_5px_18px_rgba(131,131,131,0.94)]
  md:text-3xl text-2xl text-center font-bold italic"

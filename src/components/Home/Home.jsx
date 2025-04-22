@@ -2,7 +2,7 @@ import Coffees from "../Coffees/Coffees";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-blue-50 text-black min-h-svh pb-2">
       <Coffees></Coffees>
     </div>
   );

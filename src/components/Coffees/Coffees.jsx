@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router";
 import Coffee from "../Coffee/Coffee";
-import AddCoffee from "../AddCoffee/AddCoffee";
 
 const Coffees = () => {
   const loadedCoffees = useLoaderData();
@@ -9,7 +8,7 @@ const Coffees = () => {
   // console.log(coffees);
 
   return (
-    <div className="bg-white">
+    <div className="bg-blue-50">
       <div>
         <h1 className="text-2xl pt-4 text-center pb-10 text-gray-800 font-bold  [text-shadow:_-6px_5px_18px_rgba(131,131,131,0.94)]">
           Coffees: <span className="text-orange-600">{coffees.length}</span>
@@ -27,7 +26,6 @@ const Coffees = () => {
           </div>
         </div>
       </div>
-      <AddCoffee></AddCoffee>
     </div>
   );
 };
