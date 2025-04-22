@@ -27,10 +27,7 @@ const router = createBrowserRouter([
         loader: () =>
           fetch("https://coffee-store-server-5f2v.onrender.com/coffee"),
       },
-      {
-        path: "/",
-        element: <Home></Home>,
-      },
+
       {
         path: "/coffee",
         element: <Coffee></Coffee>,

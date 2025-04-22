@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
 const AddCoffee = () => {
+  const navigate = useNavigate();
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -42,6 +44,7 @@ const AddCoffee = () => {
             confirmButtonText: "OK",
           });
         }
+        navigate("/");
       });
   };
   /* ***************  *************** */

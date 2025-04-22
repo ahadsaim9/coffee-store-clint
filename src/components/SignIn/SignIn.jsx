@@ -1,13 +1,14 @@
 import { GoEye, GoEyeClosed } from "react-icons/go";
 import { useContext, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const SignIn = () => {
   const { signInUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
-
+  const navigate = useNavigate();
   const handleLogin = (event) => {
     event.preventDefault();
     // console.log(event.currentTarget);
@@ -33,9 +34,9 @@ const SignIn = () => {
           .then((data) => {
             if (data.matchedCount > 0) {
               form.reset();
-              console.log("User found and updated:", data);
+              // console.log("User found and updated:", data);
             } else {
-              console.log("No user found with that email.");
+              // console.log("No user found with that email.");
             }
           });
 
@@ -44,6 +45,7 @@ const SignIn = () => {
           text: "You clicked the button!",
           icon: "success",
         });
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
