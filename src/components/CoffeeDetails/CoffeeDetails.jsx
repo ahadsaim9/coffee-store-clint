@@ -15,7 +15,7 @@ const CoffeeDetails = () => {
   const { name, quantity, supplier, taste, category, details, photo_url } =
     coffee;
   return (
-    <div className="w-full mx-auto bg-blue-50">
+    <div className="w-full min-h-svh mx-auto bg-blue-50">
       <div className="p-5 w-[50%] mx-auto text-blue-950 bg-blue-50">
         <h2 className="text-2xl font-bold text-center">Coffee Name: {name}</h2>
         <img

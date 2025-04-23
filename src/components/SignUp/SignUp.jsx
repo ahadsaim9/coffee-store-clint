@@ -84,15 +84,15 @@ const SignUp = () => {
   };
 
   return (
-    <div className="bg-[#f3f3f3] w-full">
-      <section className=" flex justify-center h-screen items-center">
-        <div className=" bg-white mx-auto w-full md:w-2/4 px-5 sm:px-16">
+    <div className="bg-blue-50 w-full">
+      <section className=" flex justify-center h-screen items-center ">
+        <div className=" bg-blue-50 mx-auto w-full md:w-2/4 px-5 sm:px-16 [box-shadow:_-6px_5px_18px_rgba(131,131,131,0.94)] rounded">
           <h3 className=" lg:text-2xl text-blue-900  my-6 text-center font-semibold">
             Create a New account
           </h3>
           <hr />
           <form
-            className="flex mt-6 flex-col gap-5 z-10 text-blue-900"
+            className="flex mt-6 flex-col gap-5 z-10 text-blue-900 rounded "
             onSubmit={handleSignUp}
           >
             <div>
@@ -140,7 +140,7 @@ const SignUp = () => {
             </div>
             <input
               type="submit"
-              className="bg-blue-950  hover:bg-green-800 duration-500 hover:shadow-md  text-white w-full py-3 font-bold rounded-sm px-3"
+              className="bg-blue-950  hover:bg-green-900 duration-500 hover:shadow-md  text-white w-full py-3 font-bold rounded-sm px-3"
             />
           </form>
           {/* *********** error and success message ************ */}

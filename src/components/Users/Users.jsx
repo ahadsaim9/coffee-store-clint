@@ -40,7 +40,7 @@ const Users = () => {
 
   return (
     <div className="min-h-svh w-full bg-blue-50 text-black pb-5">
-      <h1 className="text-2xl text-center py-10">
+      <h1 className="text-2xl text-center py-6">
         Total Users:
         <span className="text-orange-600 font-semibold">{users.length}</span>
       </h1>
