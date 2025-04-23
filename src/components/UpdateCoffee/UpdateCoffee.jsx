@@ -51,7 +51,7 @@ const UpdateCoffee = () => {
   };
 
   return (
-    <div className="w-full mx-auto bg-blue-50 pb-5 ">
+    <div className="w-full min-h-svh mx-auto bg-blue-50 pb-5 ">
       <div className="max-w-[1180px]  mx-auto py-8 rounded-b-2xl [box-shadow:_-6px_5px_18px_rgba(131,131,131,0.94)] text-black bg-blue-50 px-3 sm:px-8 ">
         <h1
           className=" mb-5 [text-shadow:_-6px_5px_18px_rgba(131,131,131,0.94)]
