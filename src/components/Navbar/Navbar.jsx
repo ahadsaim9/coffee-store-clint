@@ -1,20 +1,46 @@
-import { NavLink } from "react-router";
+import { Navigate, NavLink, useNavigate } from "react-router";
 import { useContext, useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    logOut()
-      .then(() => {
-        console.log("User logged out");
-      })
-      .catch((error) => {
-        console.error("Logout error:", error);
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Do you really want to log out?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, log out",
+      cancelButtonText: "Cancel",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        logOut()
+          .then(() => {
+            Swal.fire({
+              title: "Logged out!",
+              text: "You have been logged out.",
+              icon: "success",
+              timer: 1000,
+              showConfirmButton: false,
+            });
+
+            setTimeout(() => {
+              navigate("/");
+            }, 1000);
+          })
+          .catch((error) => {
+            console.error("Logout error:", error);
+            Swal.fire("Error!", "Something went wrong.", "error");
+          });
+      }
+    });
   };
 
   return (

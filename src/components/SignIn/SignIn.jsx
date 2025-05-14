@@ -44,8 +44,12 @@ const SignIn = () => {
           title: "Sign-In successfully",
           text: "You clicked the button!",
           icon: "success",
+          timer: 500,
+          showConfirmButton: false,
         });
-        navigate("/");
+        setTimeout(() => {
+          navigate("/");
+        }, 500);
       })
       .catch((error) => {
         console.error(error);

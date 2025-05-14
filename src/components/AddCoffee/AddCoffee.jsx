@@ -25,6 +25,19 @@ const AddCoffee = () => {
       photo_url,
     };
     // console.log(newCoffee);
+    /* *************** used Axios *************** */
+    // axios
+    //   .post("/user", {
+    //     firstName: "Fred",
+    //     lastName: "Flintstone",
+    //   })
+    //   .then(function (response) {
+    //     console.log(response);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
+    /* ***************  *************** */
 
     fetch("https://coffee-store-server-5f2v.onrender.com/add_coffee", {
       method: "POST",

@@ -1,12 +1,14 @@
 import { GoEye, GoEyeClosed } from "react-icons/go";
 import { useContext, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [registerError, setRegisterError] = useState("");
+  const navigate = useNavigate();
   /* ***************  *************** */
   const { createUser } = useContext(AuthContext);
   /* ***************  *************** */
@@ -56,25 +58,47 @@ const SignUp = () => {
         const createdAt = result?.user?.metadata?.creationTime;
         const newUser = { name, email, createdAt };
 
-        /* *************** save new user info to the Database.  *************** */
-        fetch("https://coffee-store-server-5f2v.onrender.com/users", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(newUser),
-        })
-          .then((res) => res.json())
+        /* *************** save new user info to the Database of axios method *************** */
+
+        axios
+          .post("https://coffee-store-server-5f2v.onrender.com/users", newUser)
           .then((data) => {
             console.log("user created to DataBase", data);
-            if (data.insertedId) {
+            if (data?.data?.insertedId) {
               form.reset();
               // alert("user created successfully.");
               Swal.fire({
                 title: "user created successfully",
                 text: "You clicked the button!",
                 icon: "success",
+                timer: 500,
+                showConfirmButton: false,
               });
+              setTimeout(() => {
+                navigate("/");
+              }, 500);
             }
           });
+
+        /* *************** save new user info to the Database of fetch method *************** */
+        // fetch("https://coffee-store-server-5f2v.onrender.com/users", {
+        //   method: "POST",
+        //   headers: { "content-type": "application/json" },
+        //   body: JSON.stringify(newUser),
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     console.log("user created to DataBase", data);
+        //     if (data.insertedId) {
+        //       form.reset();
+        //       // alert("user created successfully.");
+        //       Swal.fire({
+        //         title: "user created successfully",
+        //         text: "You clicked the button!",
+        //         icon: "success",
+        //       });
+        //     }
+        //   });
       })
       /* ***************  *************** */
 
