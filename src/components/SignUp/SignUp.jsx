@@ -6,7 +6,8 @@ import Swal from "sweetalert2";
 import axios from "axios";
 
 const SignUp = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword1, setShowPassword1] = useState(false);
+  const [showPassword2, setShowPassword2] = useState(false);
   const [registerError, setRegisterError] = useState("");
   const navigate = useNavigate();
   /* ***************  *************** */
@@ -21,35 +22,37 @@ const SignUp = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log("name", name, "email:", email, "password:", password);
-
-    // console.log(form);
+    const confirmPassword = form.confirmPassword.value;
 
     /* *************** password check *************** */
     if (password.length < 6) {
-      setRegisterError(" password should be at least  6 characters or longer");
-      Swal(
-        "Oops!",
-        "password should be at least  6 characters or longer..!",
-        "error"
-      );
+      setRegisterError("Password should be at least 6 characters or longer");
+      setTimeout(() => setRegisterError(""), 5000);
+      return;
     } else if (!/[A-Z]/.test(password)) {
       setRegisterError(
-        "Your password should have at last one upper case letter."
+        "Your password should have at least one uppercase letter."
       );
-
+      setTimeout(() => setRegisterError(""), 5000);
       return;
     } else if (!/[a-z]/.test(password)) {
       setRegisterError(
-        "Your password should have at last one lower case letter."
+        "Your password should have at least one lowercase letter."
       );
-
+      setTimeout(() => setRegisterError(""), 5000);
       return;
     } else if (!/[0-9]/.test(password)) {
-      setRegisterError("Your password should have at last one number(0-9).!");
+      setRegisterError("Your password should have at least one number (0-9).");
+      setTimeout(() => setRegisterError(""), 5000);
       return;
     }
-    /* *************** accepted terms and condition *************** */
+    /* ***************  Confirm password check  *************** */
+
+    if (password !== confirmPassword) {
+      setRegisterError("Passwords do not match.");
+      setTimeout(() => setRegisterError(""), 5000);
+      return;
+    }
 
     createUser(email, password)
       /* ***************  *************** */
@@ -57,9 +60,7 @@ const SignUp = () => {
         // console.log("user created at fb", result.user);
         const createdAt = result?.user?.metadata?.creationTime;
         const newUser = { name, email, createdAt };
-
         /* *************** save new user info to the Database of axios method *************** */
-
         axios
           .post("https://coffee-store-server-5f2v.onrender.com/users", newUser)
           .then((data) => {
@@ -79,26 +80,6 @@ const SignUp = () => {
               }, 500);
             }
           });
-
-        /* *************** save new user info to the Database of fetch method *************** */
-        // fetch("https://coffee-store-server-5f2v.onrender.com/users", {
-        //   method: "POST",
-        //   headers: { "content-type": "application/json" },
-        //   body: JSON.stringify(newUser),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     console.log("user created to DataBase", data);
-        //     if (data.insertedId) {
-        //       form.reset();
-        //       // alert("user created successfully.");
-        //       Swal.fire({
-        //         title: "user created successfully",
-        //         text: "You clicked the button!",
-        //         icon: "success",
-        //       });
-        //     }
-        //   });
       })
       /* ***************  *************** */
 
@@ -143,6 +124,7 @@ const SignUp = () => {
                 className="bg-[#F3F3F3] w-full py-2 mt-2 rounded-sm px-3 placeholder:text-[14px]"
               />
             </div>
+            {/* ************** Password ************** */}
 
             <div className="relative">
               <label className=" font-semibold " htmlFor="">
@@ -152,16 +134,36 @@ const SignUp = () => {
                 required
                 name="password"
                 placeholder="Please Enter Your Password"
-                type={showPassword ? "text" : "password"}
+                type={showPassword1 ? "text" : "password"}
                 className="bg-[#F3F3F3] w-full py-2 mt-2 rounded-sm px-3 placeholder:text-[14px]"
               />
-              <p
-                onClick={() => setShowPassword(!showPassword)}
+              <span
+                onClick={() => setShowPassword1(!showPassword1)}
                 className=" text-2xl absolute right-2 top-10 z-10  text-gray-900 cursor-pointer "
               >
-                {showPassword ? <GoEyeClosed /> : <GoEye />}
-              </p>
+                {showPassword1 ? <GoEyeClosed /> : <GoEye />}
+              </span>
             </div>
+            {/* ************** Confirm Password ************** */}
+            <div className="relative">
+              <label className=" font-semibold " htmlFor="">
+                Confirm Password
+              </label>
+              <input
+                required
+                name="confirmPassword"
+                placeholder="Please Enter Your Confirm Password"
+                type={showPassword2 ? "text" : "password"}
+                className="bg-[#F3F3F3] w-full py-2 mt-2 rounded-sm px-3 placeholder:text-[14px]"
+              />
+              <span
+                onClick={() => setShowPassword2(!showPassword2)}
+                className=" text-2xl absolute right-2 top-10 z-10  text-gray-900 cursor-pointer "
+              >
+                {showPassword2 ? <GoEyeClosed /> : <GoEye />}
+              </span>
+            </div>
+
             <input
               type="submit"
               className="bg-blue-950  hover:bg-green-900 duration-500 hover:shadow-md  text-white w-full py-3 font-bold rounded-sm px-3"

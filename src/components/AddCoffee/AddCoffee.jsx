@@ -24,20 +24,7 @@ const AddCoffee = () => {
       details,
       photo_url,
     };
-    // console.log(newCoffee);
-    /* *************** used Axios *************** */
-    // axios
-    //   .post("/user", {
-    //     firstName: "Fred",
-    //     lastName: "Flintstone",
-    //   })
-    //   .then(function (response) {
-    //     console.log(response);
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
-    /* ***************  *************** */
+    /* *************** Post Data *************** */
 
     fetch("https://coffee-store-server-5f2v.onrender.com/add_coffee", {
       method: "POST",
@@ -60,7 +47,6 @@ const AddCoffee = () => {
         navigate("/");
       });
   };
-  /* ***************  *************** */
 
   return (
     <div className=" w-full min-h-svh bg-blue-50 pb-5 ">
@@ -81,7 +67,7 @@ const AddCoffee = () => {
           expert baristas, ensuring a rich and flavorful experience. Whether
           you’re here for a quick espresso, a relaxing latte, or a friendly
           chat, we’re dedicated to making every visit special. Join us and enjoy
-          great coffee, warm vibes, and a community that feels like home! ☕✨
+          great coffee, warm vibes, and a community that feels like home!☕
         </p>
         <form onSubmit={handleFormSubmit} className="flex flex-col gap-y-6 ">
           <div className="flex flex-col md:flex-row w-full gap-x-8 gap-y-4 md:gap-y-0 ">
@@ -90,7 +76,7 @@ const AddCoffee = () => {
                 <span className="block mb-2 font-semibold">Coffee Name</span>
               </label>
               <input
-                className="pl-4 py-2 border w-full "
+                className="pl-4 py-2 border w-full"
                 type="text"
                 name="name"
                 placeholder="Enter Coffee Name"

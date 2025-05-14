@@ -92,12 +92,12 @@ const SignIn = () => {
                 type={showPassword ? "text" : "password"}
                 className="bg-[#F3F3F3] w-full py-2 mt-2 rounded-sm px-3 placeholder:text-[14px]"
               />
-              <p
+              <span
                 onClick={() => setShowPassword(!showPassword)}
                 className=" text-2xl absolute right-2 top-10 z-10  text-gray-900 cursor-pointer "
               >
                 {showPassword ? <GoEyeClosed /> : <GoEye />}
-              </p>
+              </span>
             </div>
             <input
               type="submit"
